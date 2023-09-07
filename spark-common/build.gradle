@@ -4,6 +4,11 @@ plugins {
     id 'com.google.protobuf' version '0.9.1'
 }
 
+tasks.withType(JavaCompile) {
+    // override, compile targeting J8
+    options.release = 8
+}
+
 license {
     exclude '**/sampler/async/jfr/**'
 }

@@ -2,6 +2,11 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
+tasks.withType(JavaCompile) {
+    // override, compile targeting J8
+    options.release = 8
+}
+
 dependencies {
     implementation project(':spark-common')
     implementation 'net.kyori:adventure-platform-bukkit:4.2.0'

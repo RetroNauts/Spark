@@ -2,15 +2,12 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
-tasks.withType(JavaCompile) {
-    // override, compile targeting J17
-    options.release = 17
-}
+
 
 dependencies {
     implementation project(':spark-common')
     compileOnly 'com.github.Minestom.Minestom:Minestom:master-SNAPSHOT'
-    implementation 'com.google.guava:guava:19.0'
+    implementation 'com.google.guava:guava-parent:30.0-jre'
 }
 
 processResources {
